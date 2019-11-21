@@ -17,7 +17,7 @@
 
 在它的基础上，支持了`React`代码的实时预览和编辑功能。
 
-### 安装
+## 安装
 
 本文档系统依赖 `@gem-mine/cli` 生成，请先安装 `@gem-mine/cli`
 
@@ -26,7 +26,7 @@ npm i @gem-mine/cli -g // 安装 gmc
 gms add:doc --dir=docs// 为项目生成文档, 默认生成在当前项目的`docs`目录下
 ```
 
-### 调试
+## 调试
 
 ```shell
 gmc doc:serve
@@ -43,7 +43,7 @@ gmc doc:serve
   * Default: `3000`
   * Description: Choose a listen port, defaults to `3000`.
 
-### 默认插件列表
+## 默认插件列表
 
 默认包含如下插件
 
@@ -59,7 +59,7 @@ gmc doc:serve
 
 !> 请务必移除`index.html`中的``<script src="../static/demo-ui-lib.js"></script>``。这是一个用作范例的组件库，请替换成你自己的组件库
 
-### 定制
+## 定制
 
 你可以尽情的修改文档目录下的内容。
 
