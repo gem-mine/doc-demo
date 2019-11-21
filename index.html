@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>docsify</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <!-- Theme: Simple -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
+    <link rel="stylesheet" href="../static/css/global.css">
+    <!-- Prism Theme -->
+    <link rel="stylesheet" href="../static/css/palenight.css">
+  </head>
+
+  <body>
+    <div id="app"></div>
+  </body>
+  
+  <!-- docsify react-live -->
+  <script src="../static/js/inline/react.development.js"></script>
+  <script src="../static/js/inline/react-dom.development.js"></script>
+  <script src="../static/js/inline/babel.min.js"></script>
+  <script src="../static/js/docsify/docsify-react-live.min.js"></script>
+  <!-- 下面的代码是一个范例组件库，请记得替换成自己的组件库 -->
+  <script src="../static/demo-ui-lib.js"></script>
+  
+  <!-- config -->
+  <script>
+    window.$docsify = {
+      name: '我的文档',
+      repo: 'https://github.com',
+      loadSidebar: true,
+      loadNavbar: true,
+      mergeNavbar: true,
+      subMaxLevel: 4,
+      auto2top: true,
+      markdown: {
+        gfm: true,
+        tables: true,
+      },
+      fallbackLanguages: ['zh-cn'],
+      // 完整配置参数
+      search: {
+        // 支持本地化
+        placeholder: {
+          '/zh-cn/': '搜索',
+          '/': '请输入关键字进行搜索'
+        },
+        noData: '找不到结果!',
+
+        // 支持本地化
+        noData: {
+          '/zh-cn/': '找不到结果!',
+          '/': '找不到结果!'
+        },
+      },
+      copyCode: {
+        buttonText: {
+          '/zh-cn/': '点击复制',
+          '/ru/'   : 'Скопировать в буфер обмена',
+          '/de-de/': 'Klicken Sie zum Kopieren',
+          '/es/'   : 'Haga clic para copiar',
+          '/'      : '点击复制'
+        },
+        errorText: {
+          '/zh-cn/': '错误',
+          '/ru/'   : 'ошибка',
+          '/'      : 'Error'
+        },
+        successText: {
+          '/zh-cn/': '已复制',
+          '/ru/'   : 'Скопировано',
+          '/de-de/': 'Kopiert',
+          '/es/'   : 'Copiado',
+          '/'      : 'Copied'
+        }
+      },
+      plugins: [
+        (function () {
+          return ReactLiveBox.create()
+        })()
+      ],
+    }
+  </script>
+
+  <!-- docsify -->
+   <script src="../static/js/docsify/docsify.min.js"></script>
+
+  <!-- plugins -->
+  <script src="../static/js/docsify/search.min.js"></script>
+  <script src="../static/js/docsify/docsify-copy-code.min.js"></script>
+  <script src="../static/js/docsify/emoji.min.js"></script>
+  <script src="../static/js/docsify/docsify-pagination.min.js"></script>
+  <script src="../static/js/docsify/docsify-tabs.js"></script>
+  <!-- language highlight -->
+  <script src="../static/js/prism/prism-bash.min.js"></script>
+  <script src="../static/js/prism/prism-json.min.js"></script>
+  <script src="../static/js/prism/prism-javascript.min.js"></script>
+  <script src="../static/js/prism/prism-jsx.min.js"></script>
+</html>
