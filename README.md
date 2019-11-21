@@ -17,31 +17,36 @@
 
 在它的基础上，支持了`React`代码的实时预览和编辑功能。
 
-## 安装
+### 安装
 
 本文档系统依赖 `@gem-mine/cli` 生成，请先安装 `@gem-mine/cli`
 
 ```shell
 npm i @gem-mine/cli -g // 安装 gmc
-gms add:doc --dir=docs// 为项目生成文档, 默认生成在当前项目的`docs`目录下
+gms add:doc // 为项目生成文档, 默认生成在当前项目的`docs`目录下
 ```
 
-## 调试
+### 调试
 
 ```shell
-gmc doc:serve
+npm run dev:doc // 执行的`gmc doc:serve`
+npx gmc dev:doc --no-open
 ```
 
-* `--open` option:
-  * Shorthand: `-o`
-  * Type: boolean
-  * Default: `false`
-  * Description: Open the docs in the default browser, defaults to `false`. To explicitly set this option to `false` use `--no-open`.
-* `--port` option:
-  * Shorthand: `-p`
-  * Type: number
-  * Default: `3000`
-  * Description: Choose a listen port, defaults to `3000`.
+``dev:doc`` 支持如下参数
+
+* `--port`:
+  * 默认值: `3000`
+  * 描述: 开启的调试服务器的调试端口，会自动检测冲突并递增寻找可用端口
+* `--livereloadPort`:
+  * 默认值: `35729`
+  * 描述: 用于实时刷新的端口，会自动检测冲突并递增寻找可用端口
+* `--indexName`:
+  * 默认值: `index.html`
+  * 描述: 开启后默认打开的HTML入口页面
+* `--open`:
+  * 默认值: true
+  * 描述: 开启调试服务器后自动打开浏览器，传入`--no-open`来关闭开打浏览器
 
 ## 默认插件列表
 
@@ -53,6 +58,8 @@ gmc doc:serve
 - `docsify-pagination` 翻页支持
 - `docsify-tabs` 支持`tab`语法
 - `prism` 语法高亮默认提供了`bash`, `json`, `javascript`, `bash`, `jsx`
+- `docsify-plugin-toc`实现了右侧目录
+- `docsify-example-panels` 实现了左右分布的块元素
 - `docsify-react-live` 实现`React`代码在线查看和编辑
 
 > 如果要扩展其他语法高亮，添加的 `prism` 请使用v15版本
